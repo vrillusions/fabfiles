@@ -8,10 +8,9 @@ from fabric.api import env, run, sudo, cd, get, hide
 
 
 def get_timestamp(with_time=True):
-    """Get a compressed timestamp suitable for filenames.
+    """get a compressed timestamp suitable for filenames
 
-    :param with_time bool: Include time as well as date. Defaults to true
-
+    :param bool with_time: Include time as well as date. Defaults to true
     """
     datefmt = "%Y%m%d"
     if with_time:

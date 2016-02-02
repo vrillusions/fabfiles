@@ -13,7 +13,7 @@ from .settings import *
 
 @task
 def update():
-    """Update the dotfiles repo if it exists"""
+    """update the dotfiles repo if it exists"""
     if files.exists('~/dotfiles'):
         with cd('~/dotfiles'):
             run('git pull')
@@ -23,4 +23,4 @@ def update():
 
 #@task
 #def setup():
-#    """setup dotfiles repo."""
+#    """setup dotfiles repo"""

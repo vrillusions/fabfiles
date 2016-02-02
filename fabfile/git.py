@@ -13,7 +13,10 @@ from .settings import *
 
 @task
 def version(gitdir=None):
-    """Get the current revision of given path."""
+    """get the current revision of given path
+
+    :param str gitdir: The path to check. Will prompt if not specified
+    """
     if not gitdir:
         gitdir = prompt('Enter the full path to remote git project: ')
     git_describe_opts = '--always --long'
@@ -24,7 +27,10 @@ def version(gitdir=None):
 
 @task
 def status(gitdir=None):
-    """Get the current revision and changes of given path."""
+    """get the current revision and changes of given path
+
+    :param str gitdir: The path to check. Will prompt if not specified
+    """
     if not gitdir:
         gitdir = prompt('Enter the full path to remote git project: ')
     git_describe_opts = '--always --long'

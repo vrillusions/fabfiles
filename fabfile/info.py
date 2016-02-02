@@ -14,7 +14,7 @@ from .settings import *
 
 @task
 def tcp_states():
-    """Summarize the host(s) tcp states."""
+    """summarize the host(s) tcp states"""
     run("netstat -ant | sed -e '1,2d' | awk '{ print $6 }' | sort | "
         "uniq -c | sort -rn | column -t")
 
@@ -22,13 +22,13 @@ def tcp_states():
 # Easier to just duplicate tcp_states() then use an argument
 @task
 def tcp_states_detail():
-    """Summarize the host(s) tcp states, including destination ip."""
+    """summarize the host(s) tcp states, including destination ip"""
     run("netstat -ant | sed -e '1,2d' -e 's/:[0-9]\+//g' | "
         "awk '{ print $6,$5 }' | sort | uniq -c | sort -rn | column -t")
 
 
 @task
 def tcp_hosts():
-    """Summarize tcp connections by remote address."""
+    """summarize tcp connections by remote address"""
     run("netstat -ant | sed -e '1,2d' -e 's/:[0-9]\+//g' | awk '{print $5}' "
         "| sort | uniq -c | sort -rn")

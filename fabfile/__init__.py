@@ -14,7 +14,7 @@ from . import apt, dotfiles, git, info, puppet, util
 
 @task(alias='usk')
 def update_ssh_key():
-    """Ensures local user's ssh key is on remote server."""
+    """ensures local user's ssh key is on remote server"""
     home = os.path.expanduser('~')
     with file('{0}/.ssh/id_rsa.pub'.format(home)) as f:
         pubkey = f.read().rstrip()
@@ -22,6 +22,7 @@ def update_ssh_key():
         run('mkdir -m 0700 $HOME/.ssh')
     files.append(text=pubkey, filename='$HOME/.ssh/authorized_keys')
     run('chmod 0600 $HOME/.ssh/authorized_keys')
+
 
 @task()
 def reboot():
