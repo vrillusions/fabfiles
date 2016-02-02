@@ -9,7 +9,7 @@ from fabric.contrib import files
 from fabric.colors import yellow, green, red, cyan
 
 from .settings import *
-from . import apt, git, info, puppet, util
+from . import apt, dotfiles, git, info, puppet, util
 
 
 @task(alias='usk')
