@@ -15,3 +15,4 @@ except ImportError:
 
 env.use_ssh_config = True
 env.colorize_errors = True
+env.skip_bad_hosts = True
