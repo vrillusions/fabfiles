@@ -1,6 +1,5 @@
-# vim:ts=4:sw=4:ft=python:fileencoding=utf-8
-from __future__ import (division, absolute_import, print_function,
-                        unicode_literals)
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import, print_function, unicode_literals
 
 from fabric.api import env, task, sudo, with_settings
 
