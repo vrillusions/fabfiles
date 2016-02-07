@@ -7,7 +7,7 @@ from fabric.api import cd, env, hide, hosts, prompt, run, settings, sudo, task
 from fabric.contrib import files
 from fabric.colors import yellow, green, red, cyan
 
-from . import settings
+from .settings import *
 # all the modules that have fab tasks in them
 from . import apt, dotfiles, git, info, puppet
 
